@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SierraKalkulator</title>
+</head>
+<body>
+    <h1>Kalkulator Sederhana</h1>
+    <div>
+        <input type="number" id="angka1"> <!-- untuk memasukkan angka pertama yang akan diproses-->
+        <select id="operator"> <!-- untuk memilih operator yang akan diproses-->
+            <option value="+"> + </option>
+            <option value="-"> - </option>
+            <option value="*"> * </option>
+            <option value="/"> / </option>
+            <option value="%"> % </option> 
+        </select>
+        <input type="number" id="angka2"> <!-- untuk memasukkan angka kedua yang akan diproses-->
+        <span> = </span>
+        <span id="hasil"> Hasil </span> <br> <br>
+        <button id="submit"> Submit </button> <!-- untuk mengeluarkan angka yang telah diproses-->
+    </div>
+    <script>
+        const angka1 = document.getElementById('angka1') //getElementById digunakan untuk menampilkan hasil perhitungan didalam element HTML dengan id 'angka1'//
+        const angka2 = document.getElementById('angka2') //getElementById digunakan untuk menampilkan hasil perhitungan didalam element HTML dengan id 'angka2'//
+        const operator = document.getElementById('operator') //getElementById digunakan untuk menampilkan hasil perhitungan didalam element HTML dengan id 'operator'//
+        const hasil = document.getElementById('hasil') //getElementById digunakan untuk menampilkan hasil perhitungan didalam element HTML dengan id 'hasil'//
+        const submit = document.getElementById('submit') //getElementById digunakan untuk menampilkan hasil perhitungan didalam element HTML dengan id 'submit'//
+
+        submit.addEventListener('click', function(){ //ketika tombol diklik akan memunculkan sesuatu yaitu hasil dari perhitungan//
+            hasil.innerText = eval(angka1.value + operator.value + angka2.value) //eval yaitu fungsi yang memungkinkan kita untuk menjalankan kode dari sebuah string//
+        })
+    </script>
+</body>
+</html>
